@@ -68,7 +68,7 @@ public class Solution24 {
         System.out.println("anagrams.");
     }
 
-    private boolean isAnagram(String string1, String string2) {
+    public boolean isAnagram(String string1, String string2) {
         if (string1 == null || string2 == null || string1.length() != string2.length()) {
             return false;
         }
