@@ -7,11 +7,28 @@ package baseline;
 
 public class Solution26 {
 
-    // create PaymentCalculator class
+    public static void main(String[] args) {
+        // balance = getInputFromUser(prompt)
+        // apr = getInputFromUser(prompt)
+        // monthlyPayment = getInputFromUser(prompt)
 
-    // private static void main(String[] args)
+        // create PaymentCalculator(balance, apr, monthlyPayment)
 
-    // private double getInputFromUser(prompt)
+        // numberMonths = PaymentCalculator.calcMonthsUntilPaidOff()
 
-    // private void displayMonthsToPay(numberMonths)
+        // displayMonthsToPay(numberMonths)
+    }
+
+    private double getInputFromUser(String prompt) {
+        // print prompt to user
+        // get input string from user
+        // return input as double
+
+        // placeholder
+        return 0;
+    }
+
+    private void displayMonthsToPay(int numberMonths) {
+        // print output to user displaying number of months left
+    }
 }
