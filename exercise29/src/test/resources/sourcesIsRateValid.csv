@@ -1,0 +1,9 @@
+String rate, boolean expected
+0, false
+1, true
+111, true
+1f, true
+fa, false
+zero, false
+24f, true
+0000, false
