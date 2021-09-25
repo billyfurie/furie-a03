@@ -1,0 +1,11 @@
+String lastName, boolean expected
+, false
+ , false
+  , false
+Furie, true
+F, false
+Fu, true
+Furie123, true
+furie, true
+00, true
+4, false

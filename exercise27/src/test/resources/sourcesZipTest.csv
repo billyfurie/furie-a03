@@ -1,0 +1,18 @@
+String zip, boolean expected
+, false
+ , false
+  , false
+   , false
+    , false
+12345, true
+1234f, false
+f1235, false
+f123z, false
+A123V, false
+A1f4#, false
+ASDF2, false
+54143, true
+00000, true
+11111, true
+-1111, false
+-1234, false

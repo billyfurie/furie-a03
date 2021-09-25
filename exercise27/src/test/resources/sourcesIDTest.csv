@@ -1,0 +1,26 @@
+String id, boolean expected
+, false
+ , false
+  , false
+   , false
+    , false
+     , false
+      , false
+12-1234, false
+AB-1234, true
+ZZ-0000, true
+AA-0000, true
+AA-1234, true
+BF-7777, true
+AA-0909, true
+aa-0000, false
+12-1234, false
+AB-ab12, false
+CD-1ll1, false
+CD-ABCD, false
+CDA-3103, false
+BEF-000, false
+BE0-000, false
+BE00-00, false
+BE000-0, false
+BE0000-, false
