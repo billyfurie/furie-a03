@@ -1,0 +1,10 @@
+String number, boolean expected
+25, true
+1, true
+123545, true
+2.3, false
+gkg, false
+1OO, false
+100, true
+9999999, true
+99f99999, false
