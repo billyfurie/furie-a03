@@ -11,11 +11,18 @@ public class Solution30 {
         // generate multiplication table
     }
 
-    public void generateTable() {
+    public String generateTable() {
         // use a nested for loop
         // go from 1-12 in each loop
         // aligning each column
         // build the string
-        // print the string
+        // return the string
+
+        // placeholder
+        return "";
+    }
+
+    public void displayTable(String table) {
+        // print the table
     }
 }
