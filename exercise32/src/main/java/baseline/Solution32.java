@@ -5,29 +5,75 @@
 
 package baseline;
 
+import java.util.Scanner;
+
 public class Solution32 {
 
-    public static void main(String[] args) {
-        // prompt user for difficulty
+    private static final Scanner input = new Scanner(System.in);
 
-        // create a GuessGame class
-            // has a guess method
-                // tell user if guess is too low or too high
-            // keep track of the number of guesses
-            // has a method to newGame() that regenerates the number
+    public static void main(String[] args) {
+        Solution32 solution = new Solution32();
+
+        // print welcome message
+        solution.welcomeMessage("Guess the Number");
+
+        // We need the difficulty of first game to initialize the game
+        int difficulty = solution.getDifficultyFromUser();
+        GuessGame game = new GuessGame(difficulty);
 
         // keep prompting user for numbers while game is active
-        // if we guess correctly, then ask user if they would like to play again
+        while (game.getActive()) {
+            String guess = input.nextLine();
+
+            // check if the guess is correct
+            if (game.guessNumber(guess)) {
+                // if its correct we need to ask player whether they want to play again
+                boolean playAgain = solution.getPlayAgainFromUser();
+
+                if (playAgain) {
+                    int diff = solution.getDifficultyFromUser();
+                    game.newGame(diff);
+                } else {
+                    game.endGame();
+                }
+            } else {
+                // tell the player why guess is incorrect
+                game.getDiagnosisIncorrect(guess);
+            }
+        }
+    }
+
+    private void welcomeMessage(String gameName) {
+        System.out.printf("Let's play %s!", gameName);
     }
 
     private int getDifficultyFromUser() {
         // prompt for difficulty level
+        System.out.print("\nEnter the difficulty level (1, 2, or 3): ");
         // read in the string
-        // check to make sure it is 1, 2, or 3. If it is not, prompt again
+        String diff = input.nextLine();
 
+        // check to make sure it is 1, 2, or 3. If it is not, prompt again
+        while (!(diff.equals("1") || diff.equals("2") || diff.equals("3"))) {
+            System.out.print("That is not a difficulty. Enter 1, 2, or 3: ");
+            diff = input.nextLine();
+        }
         // return the difficulty
 
-        // placeholder
-        return 0;
+        return Integer.parseInt(diff);
+    }
+
+    // get whether the user wants to play another game
+    private boolean getPlayAgainFromUser() {
+        System.out.print("Do you wish to play again (Y/N)? ");
+
+        String response = input.nextLine();
+
+        while (!(response.equals("y") || response.equals("n") || response.equals("Y") || response.equals("N"))) {
+            System.out.print("That is not a valid response! Please enter 'Y' or 'N':");
+            response = input.nextLine();
+        }
+
+        return (response.equals("y") || response.equals("Y"));
     }
 }
