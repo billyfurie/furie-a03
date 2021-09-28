@@ -20,7 +20,7 @@ class Solution33Test {
             String value = solution.getAnswer(values);
 
             // make sure the result we got randomly is in the array
-            assert Arrays.asList(values).contains(value);
+            assertTrue(Arrays.asList(values).contains(value));
         }
     }
 
@@ -38,11 +38,9 @@ class Solution33Test {
         String[] expectedThree = {a, b, c};
         String[] actualThree = solution.createAnswerBank(a, b, c);
 
-        System.out.println(actualOne + ", " + expectedOne);
-
-        assertTrue(Arrays.equals(actualOne, expectedOne));
-        assertTrue(Arrays.equals(actualTwo, expectedTwo));
-        assertTrue(Arrays.equals(actualThree, expectedThree));
+        assertArrayEquals(actualOne, expectedOne);
+        assertArrayEquals(actualTwo, expectedTwo);
+        assertArrayEquals(actualThree, expectedThree);
     }
 
     @ParameterizedTest
@@ -53,7 +51,7 @@ class Solution33Test {
         for (int i = 0; i < 50; i++) {
             int actual = solution.getRandomInt(range);
 
-            assert actual >=0 && actual < range;
+            assertTrue(actual >=0 && actual < range);
         }
     }
 }
