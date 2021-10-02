@@ -1,0 +1,12 @@
+
+;
+java:S3457!"%String contains no format specifiers.(—Òê
+N	java:S106!"9Replace this use of System.out or System.err by a logger.(—Òê
+N	java:S106%"9Replace this use of System.out or System.err by a logger.(¬øª©
+?
+java:S1940'")Use the opposite operator ("!=") instead.(¯İ¦¾
+S	java:S106("9Replace this use of System.out or System.err by a logger.(Ø–ªùÿÿÿÿ
+S	java:S106*"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
+S	java:S106-"9Replace this use of System.out or System.err by a logger.(¼‹õøÿÿÿÿ
+O	java:S106€"9Replace this use of System.out or System.err by a logger.(×ÊÇ
+O	java:S106‹"9Replace this use of System.out or System.err by a logger.(ÖáõÓ
