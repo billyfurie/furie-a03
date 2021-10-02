@@ -5,75 +5,139 @@
 
 package baseline;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Solution36 {
 
+    private static final Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
+        Solution36 solution = new Solution36();
+
         // get the response times from the user
-        // display the response times
+        List<Double> responseTimes = solution.buildResponseTimesList();
         // calculate the average, minimum, maximum, and standard deviation
+        double average = solution.average(responseTimes);
+        double min = solution.min(responseTimes);
+        double max = solution.max(responseTimes);
+        double std = solution.std(responseTimes);
+
+        // display the results
+        solution.displayResults(responseTimes, average, min, max, std);
     }
 
     private void displayResults(List<Double> numbers, double average, double min, double max, double std) {
         // display the results to the user
+        System.out.printf("Numbers: ");
+
+        int index = 0;
+        for (double num : numbers) {
+            System.out.printf("%.2f", num);
+            // the last element doesn't need a comma
+            if (!(index++ ==  numbers.size() - 1)) {
+                System.out.print(", ");
+            } else {
+                System.out.println();
+            }
+        }
+        System.out.printf("The average is %.2f%nThe minimum is %.2f%nThe maximum is %.2f%nThe standard deviation is %.2f",
+                average, min, max, std);
     }
 
-    private double std(List<Double> numbers) {
+    public double std(List<Double> numbers) {
         // calculate the std dev of the numbers
+        double average = average(numbers);
+        double sumOfDifferenceSquared = 0;
+
+        for (Double num : numbers) {
+            double differenceSquared = Math.pow(num - average, 2);
+            sumOfDifferenceSquared += differenceSquared;
+        }
+
+        double underSquareRoot = sumOfDifferenceSquared / numbers.size();
+
         // return the std dev
-
-        // placeholder
-        return 0;
+        return Math.sqrt(underSquareRoot);
     }
 
-    private double max(List<Double> numbers) {
+    public double max(List<Double> numbers) {
         // find the maximum of the numbers
+        double max = Double.MIN_VALUE;
+
+        for (Double num : numbers) {
+            if (num > max) {
+                max = num;
+            }
+        }
+
         // return the maximum
-
-        // placeholder
-        return 0;
+        return max;
     }
 
-    private double min(List<Double> numbers) {
+    public double min(List<Double> numbers) {
         // find the minimum of the numbers
+        double min = Double.MAX_VALUE;
+
+        for (Double num : numbers) {
+            if (num < min) {
+                min = num;
+            }
+        }
+
         // return the minimum
-
-        // placeholder
-        return 0;
+        return min;
     }
 
-    private double average(List<Double> numbers) {
+    public double average(List<Double> numbers) {
         // calculate the average of the numbers
-        // return the average
+        double total = 0;
 
-        // placeholder
-        return 0;
+        for (Double num : numbers) {
+            total += num;
+        }
+
+        return total / numbers.size();
     }
 
-    private boolean isNumber(String num) {
+    public boolean isNumber(String num) {
         // return whether the string is numeric
-
-        // placeholder
-        return true;
+        try {
+            Double.parseDouble(num);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
     private List<Double> buildResponseTimesList() {
         // create the list
+        List<Double> responseTimes = new ArrayList<>();
+
         // keep getting numbers from user
+        String num = getNumber();
+
         // verify that the string is a number before we add
         // if they enter done, we stop
-        // return the list
+        while (!num.equals("done")) {
+            if (isNumber(num)) {
+                double number = Double.parseDouble(num);
+                responseTimes.add(number);
+            } else {
+                System.out.println("That is not a valid number.");
+            }
+            num = getNumber();
+        }
 
-        // placeholder
-        return null;
+        // return the list
+        return responseTimes;
     }
-    
+
     private String getNumber() {
         // prompt for the number
+        System.out.print("Enter a number: ");
         // return the number
-
-        // placeholder
-        return "";
+        return input.nextLine();
     }
  }
