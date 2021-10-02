@@ -1,0 +1,13 @@
+String employee1, String employee2, String employeeToRemove, boolean employeeExists
+Bob, Tim, Jerry, true
+Bob Joe, Tim Joe, Jerry John, true
+TheBilly, Billy, ABilly, true
+Steven John, Timothy Smith, Patrick Star, true
+TestName TestNameson, NameTest NameTestson, RegularName IrregularName, true
+Bob, Tim, Jerry, true
+Bob, Tim, Jerry, false
+Bob Joe, Tim Joe, Jerry John, false
+TheBilly, Billy, ABilly, false
+Steven John, Timothy Smith, Patrick Star, false
+TestName TestNameson, NameTest NameTestson, RegularName IrregularName, false
+Bob, Tim, Jerry, false

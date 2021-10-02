@@ -25,5 +25,5 @@ run {
 }
 
 application {
-    mainClass = "baseline.Solution33"
+    mainClass = "baseline.Solution34"
 }
