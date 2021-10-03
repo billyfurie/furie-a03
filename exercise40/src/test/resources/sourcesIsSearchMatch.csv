@@ -1,0 +1,11 @@
+String search, String word, boolean expected
+tir, tired, true
+sda, sad, false
+ga, gallon, true
+f, fire, true
+yes, yes, true
+sfdfaf, asfsa, false
+tired, tiredness, true
+nes, tiredness, true
+spendi, spending, true
+pend, appending, true
