@@ -1,0 +1,11 @@
+String inQuestion, String comparedTo, boolean expected
+furie, thomas, true
+furie, furi, false
+Thomas, Johnson, false
+Furie, johnson, true
+Apple, Apples, true
+Alpha, beta, true
+beta, alpha, false
+Beta, Alpha, false
+Charlie, Charlies, true
+Test, Tester, true
