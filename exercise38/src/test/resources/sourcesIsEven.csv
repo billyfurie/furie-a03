@@ -1,0 +1,9 @@
+int number, boolean expected
+3634, true
+45435, false
+61, false
+315, false
+31, false
+68,true
+1871754641, false
+1646782, true
